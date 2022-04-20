@@ -22,3 +22,4 @@ ENV PATH "$PATH:/home/cmonkey/bin"
 RUN git config --global user.email "cmonkey@cmonkey.com" && git config --global user.name "cmonkey"
 
 WORKDIR /home/workspace
+ENTRYPOINT ["repo"]
