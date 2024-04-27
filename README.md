@@ -1,22 +1,22 @@
 # dockerfile-git-repo
 Dockerfile for Android Git Repo tool.
 
-Example repo init:
+* [Android Repo reference](https://source.android.com/docs/setup/reference/repo)
+* [Repo homepage](https://gerrit.googlesource.com/git-repo/)
 
-```
-docker run -it --rm -v "${PWD}":/home/workspace git-repo init -u https://source.codeaurora.org/external/imx/fsl-arm-yocto-bsp.git -b imx-morty -m imx-4.9.11-1.0.0_ga.xml
-```
 
-Example repo sync:
-
+## Build
 ```
-docker run -it --rm -v "${PWD}":/home/workspace mmd/git-repo sync
+docker build -t local/git-repo .
 ```
 
-Another example:
+## Example repo init:
 
 ```
-docker run -it --rm -v "${PWD}":/home/workspace mmd/git-repo init -u https://source.codeaurora.org/external/imx/imx-manifest -b imx-linux-hardknott -m imx-5.10.72-2.2.0.xml
+docker run -it --rm -v "${PWD}":/home/workspace local/git-repo init -u https://github.com/nxp-imx/imx-manifest -b imx-linux-hardknott -m imx-5.10.72-2.2.2.xml
+```
 
-docker run -it --rm -v "${PWD}":/home/workspace mmd/git-repo sync
+## Example repo sync:
+```
+docker run -it --rm -v "${PWD}":/home/workspace local/git-repo sync
 ```
